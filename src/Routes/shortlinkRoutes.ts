@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/shortlinks',async (req: Request, res: Response): Promise<void> => {
     try{
-        const {userId} = req.params;
+        const {userId} = req.query;
         if(!userId){
             res.status(400).json({message: 'User ID is required'});
             return;
